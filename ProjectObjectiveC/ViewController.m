@@ -9,7 +9,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *adresseBarTextField;
+@property (weak, nonatomic) IBOutlet UIStackView *stackView;
 @end
 
 @implementation ViewController
