@@ -96,4 +96,12 @@
     return YES;
 }
 
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact) {
+        self.stackView.axis = UILayoutConstraintAxisVertical;
+    } else  {
+        self.stackView.axis = UILayoutConstraintAxisHorizontal;
+    }
+}
+
 @end
