@@ -48,11 +48,39 @@
                     <connections>
                         <outlet property="adresseBarTextField" destination="7if-7c-eu4" id="kgn-Ri-qtu"/>
                         <outlet property="stackView" destination="iNJ-qB-llC" id="ZDl-If-XfC"/>
+                        <segue destination="Q3k-FP-y9J" kind="show" identifier="showMapView" id="T7A-yL-cjr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+        </scene>
+        <!--Carte-->
+        <scene sceneID="UI6-OQ-bCx">
+            <objects>
+                <viewController storyboardIdentifier="TakePhotoViewController" title="Carte" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q3k-FP-y9J" customClass="MapViewController" customModule="ProjectObjectiveC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ufI-q8-zaF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" translatesAutoresizingMaskIntoConstraints="NO" id="TFW-SF-z8s">
+                                <rect key="frame" x="0.0" y="27" width="414" height="896"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TFW-SF-z8s" firstAttribute="width" secondItem="ufI-q8-zaF" secondAttribute="width" id="99K-lX-O3e"/>
+                            <constraint firstItem="TFW-SF-z8s" firstAttribute="height" secondItem="ufI-q8-zaF" secondAttribute="height" id="Cod-Sq-1n6"/>
+                            <constraint firstItem="TFW-SF-z8s" firstAttribute="centerX" secondItem="ZRE-RZ-IQC" secondAttribute="centerX" id="NOD-Ow-lUY"/>
+                            <constraint firstItem="TFW-SF-z8s" firstAttribute="centerY" secondItem="ZRE-RZ-IQC" secondAttribute="centerY" id="eow-mW-ZJd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZRE-RZ-IQC"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vak-E8-jiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1201" y="113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="psU-me-rQq">
