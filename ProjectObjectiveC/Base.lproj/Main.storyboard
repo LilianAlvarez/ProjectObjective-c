@@ -77,6 +77,9 @@
                         <viewLayoutGuide key="safeArea" id="ZRE-RZ-IQC"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="TFW-SF-z8s" id="LF8-GE-lAp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vak-E8-jiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
