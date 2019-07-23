@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <WebKit/WebKit.h>
+#import "ProjectObjectiveC-Swift.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *adresseBarTextField;
@@ -21,15 +22,21 @@
     [super viewDidLoad];
 
     [self setDefaultTitle];
+    [self setupAdresseBar];
 
     UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target: self action:@selector(addWebView)];
     UIBarButtonItem *delete = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemTrash target: self action:@selector(deleteWebView)];
+    UIBarButtonItem *openMap = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemSearch target: self action:@selector(openMapView)];
 
-    self.navigationItem.rightBarButtonItems = @[delete, add];
+    self.navigationItem.rightBarButtonItems = @[delete, add, openMap];
 }
 
 - (void)setDefaultTitle {
-    self.title = @"Multi navigateur Zone de chasse";
+    self.title = @"Navigateur";
+}
+
+- (void)setupAdresseBar {
+    self.adresseBarTextField.placeholder = @"https://www.google.com";
 }
 
 - (void)addWebView {
@@ -47,8 +54,6 @@
     UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(webViewTapped:)];
     recognizer.delegate = self;
     [webView addGestureRecognizer: recognizer];
-
-
 }
 
 - (void)deleteWebView {
@@ -69,11 +74,14 @@
     }
 }
 
+- (void)openMapView {
+    [self performSegueWithIdentifier:@"showMapView" sender:self];
+}
+
 - (void)selectWebView:(WKWebView*)webView {
     for (UIView *vw in self.stackView.arrangedSubviews) {
         vw.layer.borderWidth = 0;
     }
-
     self.activeWebView = webView;
     webView.layer.borderWidth = 3;
 }
@@ -96,12 +104,5 @@
     return YES;
 }
 
-- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-    if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact) {
-        self.stackView.axis = UILayoutConstraintAxisVertical;
-    } else  {
-        self.stackView.axis = UILayoutConstraintAxisHorizontal;
-    }
-}
-
 @end
+
