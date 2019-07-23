@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38428A6622E4CB46007763CF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38428A6522E4CB46007763CF /* MapViewController.swift */; };
 		3888565C22E19454007786EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3888565B22E19454007786EF /* AppDelegate.m */; };
 		3888565F22E19454007786EF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3888565E22E19454007786EF /* ViewController.m */; };
 		3888566222E19454007786EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3888566022E19454007786EF /* Main.storyboard */; };
@@ -27,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38428A6022E4B7B7007763CF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		38428A6222E4BE4C007763CF /* ProjectObjectiveC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectObjectiveC-Bridging-Header.h"; sourceTree = "<group>"; };
+		38428A6522E4CB46007763CF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3888565722E19454007786EF /* ProjectObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3888565A22E19454007786EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3888565B22E19454007786EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -60,9 +64,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38428A6122E4BE26007763CF /* SwiftModules */ = {
+			isa = PBXGroup;
+			children = (
+				38428A6222E4BE4C007763CF /* ProjectObjectiveC-Bridging-Header.h */,
+				38428A6522E4CB46007763CF /* MapViewController.swift */,
+			);
+			path = SwiftModules;
+			sourceTree = "<group>";
+		};
 		3888564E22E19454007786EF = {
 			isa = PBXGroup;
 			children = (
+				38428A6022E4B7B7007763CF /* README.md */,
 				3888565922E19454007786EF /* ProjectObjectiveC */,
 				3888567222E19457007786EF /* ProjectObjectiveCTests */,
 				3888565822E19454007786EF /* Products */,
@@ -81,6 +95,7 @@
 		3888565922E19454007786EF /* ProjectObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
+				38428A6122E4BE26007763CF /* SwiftModules */,
 				3888565A22E19454007786EF /* AppDelegate.h */,
 				3888565B22E19454007786EF /* AppDelegate.m */,
 				3888565D22E19454007786EF /* ViewController.h */,
@@ -152,6 +167,7 @@
 				TargetAttributes = {
 					3888565622E19454007786EF = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					3888566E22E19457007786EF = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -206,6 +222,7 @@
 				3888565F22E19454007786EF /* ViewController.m in Sources */,
 				3888566A22E19457007786EF /* main.m in Sources */,
 				3888565C22E19454007786EF /* AppDelegate.m in Sources */,
+				38428A6622E4CB46007763CF /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +380,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JEJP9GR2UB;
 				INFOPLIST_FILE = ProjectObjectiveC/Info.plist;
@@ -372,6 +390,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fr.lilian.ProjectObjectiveC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProjectObjectiveC/SwiftModules/ProjectObjectiveC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -380,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JEJP9GR2UB;
 				INFOPLIST_FILE = ProjectObjectiveC/Info.plist;
@@ -389,6 +411,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fr.lilian.ProjectObjectiveC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProjectObjectiveC/SwiftModules/ProjectObjectiveC-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -396,6 +420,7 @@
 		3888567C22E19457007786EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JEJP9GR2UB;
@@ -415,6 +440,7 @@
 		3888567D22E19457007786EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JEJP9GR2UB;
